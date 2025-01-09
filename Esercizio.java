@@ -1,26 +1,37 @@
-//LEGGERE LE ISTRUZIONI NEL FILE README.md
-
-//Import di Classi Java necessarie al funzionamento del programma
 import java.util.Scanner;
 
-// Classe principale, con metodo main
 class Esercizio {
-    // Il programma parte con una chiamata a main().
-    public static void main(String args[])
-    {
-        //Variabili del programma
-        String nome;
 
-        //Creo l'oggetto in per l'input da tastiera
-        Scanner in = new Scanner( System.in );
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n, i, j, ripetizioni;
 
-        //Leggo l'input da tastiera
-        System.out.print("Inserisci il tuo nome: ");
-        nome = in.nextLine();
+        System.out.println("Quanti numeri da inserire?");
+        n = in.nextInt();
+        int[] v = new int[n];
 
-        //Output del nome acquisito da tastiera
-        System.out.println("Ciao "+nome+"!");
+        i = 0;
+        while (i < n) {
+            System.out.println("inserisci numero " + (i + 1));
+            v[i] = in.nextInt();
+            i = i + 1;
+        }
+        i = 0;
+        j = 0;
+        ripetizioni = 0;
+        while (i < n) {
+            System.out.println("Il valore " + v[i] + " si ripete nelle posizioni: ");
+            j = 0;
+            while (j < n) {
+                if (v[i] == v[j]) {
+                    ripetizioni = ripetizioni + 1;
+                    System.out.println(j);
+                }
+                j = j + 1;
+            }
+            System.out.println("per " + ripetizioni + " volte");
+            i = i + 1;
+            ripetizioni = 0;
+        }
     }
 }
-
-//LEGGERE LE ISTRUZIONI NEL FILE README.md
